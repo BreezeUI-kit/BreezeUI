@@ -1,20 +1,19 @@
-// src/App.tsx
-import React, { useState } from "react";
-import Dashboard from "./pages/Dashboard";
+import React, { useState } from 'react';
+import Dashboard from './pages/Dashboard';
+import Landing from './pages/Landing';
 
-export default function App() {
-  const [dark, setDark] = useState(false);
+function App() {
+  const [page, setPage] = useState<'landing' | 'dashboard'>('landing');
 
   return (
-    <div className={dark ? 'dark' : ''}>
-      
-      <Dashboard />
-      <button
-        className="m-4 p-2 rounded bg-gray-200 dark:bg-gray-700"
-        onClick={() => setDark(!dark)}
-      >
-        Toggle {dark ? 'Light' : 'Dark'} Mode
-      </button>
+    <div className={page === 'dashboard' ? 'dark' : ''}>
+      <nav className="flex justify-center gap-6 p-4 bg-gray-200 dark:bg-gray-800">
+        <button onClick={() => setPage('landing')}>Landing</button>
+        <button onClick={() => setPage('dashboard')}>Dashboard</button>
+      </nav>
+      {page === 'landing' ? <Landing /> : <Dashboard />}
     </div>
   );
 }
+
+export default App;

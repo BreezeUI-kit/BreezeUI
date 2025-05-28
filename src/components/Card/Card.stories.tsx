@@ -1,27 +1,25 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import Card from "./Card";
-import { FaUser } from "react-icons/fa";
+import type { Meta, StoryObj } from '@storybook/react';
+import Card from './Card';
+import { FaUser } from 'react-icons/fa';
 
 const meta: Meta<typeof Card> = {
-  title: "Components/Card",
   component: Card,
+  title: 'Components/Card',
 };
-
 export default meta;
-type Story = StoryObj<typeof Card>;
 
-export const Default: Story = {
+export const Default: StoryObj<typeof Card> = {
   args: {
-    title: "Revenue",
-    value: "$8,430",
+    title: 'Revenue',
+    value: '$14,203',
   },
 };
 
-export const WithIcon: Story = {
+export const WithIcon: StoryObj<typeof Card> = {
   args: {
-    title: "Users",
-    value: "1,024",
+    title: 'Users',
+    value: '1,024',
     icon: <FaUser />,
-    description: "Active users this week",
+    description: 'Active users this week',
   },
 };
