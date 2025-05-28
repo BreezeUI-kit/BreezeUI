@@ -1,19 +1,31 @@
 // tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}', './.storybook/**/*.{js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+      borderRadius: {
+        xl: "1rem",
+      },
       colors: {
-        primary: '#14B8A6',
-        secondary: '#2563EB',
-        'neutral-50': '#F9FAFB',
-        'neutral-200': '#E5E7EB',
-        'neutral-700': '#374151',
-        success: '#10B981',
-        error: '#EF4444',
-        warning: '#F59E0B'
-      }
-    }
+        brand: {
+          50: "#eff6ff",
+          100: "#dbeafe",
+          200: "#bfdbfe",
+          300: "#93c5fd",
+          400: "#60a5fa",
+          500: "#3b82f6",
+          600: "#2563eb",
+          700: "#1d4ed8",
+          800: "#1e40af",
+          900: "#1e3a8a",
+        },
+      },
+    },
   },
-  plugins: []
-}
+  plugins: [],
+};
