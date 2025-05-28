@@ -1,10 +1,22 @@
-import React from 'react';
-import { FaCube, FaBolt, FaPalette } from 'react-icons/fa';
+import React from "react";
+import { FaCube, FaBolt, FaPalette } from "react-icons/fa";
 
 const features = [
-  { icon: <FaCube />, title: 'Component-Driven', desc: 'Reusable and composable React components.' },
-  { icon: <FaBolt />, title: 'Powered by Tailwind', desc: 'Fast styling with full dark mode support.' },
-  { icon: <FaPalette />, title: 'Themeable', desc: 'Custom themes via Tailwind config.' },
+  {
+    icon: <FaCube />,
+    title: "Component-Driven",
+    desc: "Reusable and composable React components.",
+  },
+  {
+    icon: <FaBolt />,
+    title: "Powered by Tailwind",
+    desc: "Fast styling with full dark mode support.",
+  },
+  {
+    icon: <FaPalette />,
+    title: "Themeable",
+    desc: "Custom themes via Tailwind config.",
+  },
 ];
 
 export default function Landing() {

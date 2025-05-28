@@ -28,3 +28,4 @@
 
 ```bash
 npm install breezeui
+```
