@@ -23,13 +23,17 @@ const Stat: React.FC<StatProps> = ({
 }: StatProps) => {
   return (
     <div className="p-4 border rounded-lg bg-white dark:bg-gray-900">
-      <p className="text-sm text-gray-500 dark:text-gray-400">{label}</p>
+      <p className="text-sm text-gray-700 dark:text-gray-300">{label}</p>
       <p className="text-xl font-semibold text-gray-900 dark:text-white">
         {value}
       </p>
       {change && (
         <p
-          className={`text-sm ${positive ? "text-green-600" : "text-red-600"}`}
+          className={`text-sm font-medium ${
+            positive
+              ? "text-green-700 dark:text-green-400"
+              : "text-red-700 dark:text-red-400"
+          }`}
         >
           {change}
         </p>

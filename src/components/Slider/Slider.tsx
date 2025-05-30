@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useId } from "react";
 import { SliderProps } from "./Slider.types";
 import { cn } from "@/lib/utils";
 
 /**
- * Slider component using Radix primitives.
- * Supports horizontal range selection with custom styles.
+ * Slider component with accessible label support.
+ *
+ * @param props - SliderProps including label, value, min/max, orientation, etc.
  */
 export const Slider: React.FC<SliderProps> = ({
   label,
@@ -15,7 +16,11 @@ export const Slider: React.FC<SliderProps> = ({
   step = 1,
   disabled = false,
   orientation = "horizontal",
+  id, // allow custom ID
 }) => {
+  const internalId = useId();
+  const sliderId = id ?? `slider-${internalId}`;
+  const labelId = `${sliderId}-label`;
   const isVertical = orientation === "vertical";
 
   return (
@@ -26,12 +31,20 @@ export const Slider: React.FC<SliderProps> = ({
       )}
     >
       {label && (
-        <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label
+          htmlFor={sliderId}
+          id={labelId}
+          className="text-sm font-medium text-gray-700 dark:text-gray-300"
+        >
           {label}
         </label>
       )}
+
       <input
         type="range"
+        id={sliderId}
+        aria-labelledby={label ? labelId : undefined}
+        aria-label={label ? undefined : "Slider input"}
         value={value}
         min={min}
         max={max}
@@ -45,10 +58,10 @@ export const Slider: React.FC<SliderProps> = ({
           "bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer",
           isVertical ? "h-48 w-2" : "w-full h-2"
         )}
+        role="slider"
         aria-valuemin={min}
         aria-valuemax={max}
         aria-valuenow={value}
-        role="slider"
         style={
           isVertical
             ? {
@@ -58,9 +71,8 @@ export const Slider: React.FC<SliderProps> = ({
             : undefined
         }
       />
-      <div className="text-sm text-gray-500 dark:text-gray-400">
-        {value}
-      </div>
+
+      <div className="text-sm text-gray-500 dark:text-gray-400">{value}</div>
     </div>
   );
 };

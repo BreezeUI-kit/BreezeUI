@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import {
   Command,
   CommandDialog,
@@ -6,7 +6,7 @@ import {
   CommandList,
   CommandGroup,
   CommandItem,
-} from "cmdk"
+} from "cmdk";
 
 /**
  * `CommandPalette` is a searchable keyboard-driven UI overlay that
@@ -14,41 +14,55 @@ import {
  * Keyboard navigation is supported with arrow keys and Enter.
  */
 export function CommandPalette() {
-  const [open, setOpen] = React.useState(true) // Start open by default
+  const [open, setOpen] = React.useState(true); // Start open by default
 
   // Open with Cmd+K / Ctrl+K
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault()
-        setOpen((open) => !open)
+        e.preventDefault();
+        setOpen((open) => !open);
       }
-    }
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [])
+    };
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
 
   return (
     <CommandDialog
       open={open}
       onOpenChange={setOpen}
+      aria-labelledby="command-palette-title"
+      aria-label="Command Palette"
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+      role="dialog"
     >
       <Command className="w-full max-w-md rounded-lg border bg-white p-4 shadow-xl dark:border-zinc-700 dark:bg-zinc-900">
+        {/* Accessible title for screen readers and ARIA tools */}
+        <h2 id="command-palette-title" className="sr-only">
+          Command Palette
+        </h2>
+
+        {/* Visible instruction (optional, for sighted users) */}
         <p className="mb-2 text-sm text-zinc-500 dark:text-zinc-400">
-          Press <kbd className="rounded border px-1 text-xs">⌘</kbd> + <kbd className="rounded border px-1 text-xs">K</kbd> or <kbd className="rounded border px-1 text-xs">Ctrl</kbd> + <kbd className="rounded border px-1 text-xs">K</kbd> to open/close
+          Press <kbd className="rounded border px-1 text-xs">⌘</kbd> +{" "}
+          <kbd className="rounded border px-1 text-xs">K</kbd> or{" "}
+          <kbd className="rounded border px-1 text-xs">Ctrl</kbd> +{" "}
+          <kbd className="rounded border px-1 text-xs">K</kbd> to open/close
         </p>
+
         <CommandInput
           placeholder="Type a command or search…"
           aria-label="Command Search"
           className="mb-4 w-full rounded border px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-white"
         />
+
         <CommandList className="max-h-60 overflow-y-auto">
           <CommandGroup heading="General">
             <CommandItem
               onSelect={() => {
-                alert("Searching…")
-                setOpen(false)
+                alert("Searching…");
+                setOpen(false);
               }}
               className="cursor-pointer rounded-md px-2 py-1 data-[cmdk-selected=true]:bg-zinc-200 data-[cmdk-selected=true]:outline data-[cmdk-selected=true]:outline-2 data-[cmdk-selected=true]:outline-blue-500 dark:data-[cmdk-selected=true]:bg-zinc-700"
             >
@@ -56,19 +70,20 @@ export function CommandPalette() {
             </CommandItem>
             <CommandItem
               onSelect={() => {
-                alert("Opening Settings…")
-                setOpen(false)
+                alert("Opening Settings…");
+                setOpen(false);
               }}
               className="cursor-pointer rounded-md px-2 py-1 data-[cmdk-selected=true]:bg-zinc-200 data-[cmdk-selected=true]:outline data-[cmdk-selected=true]:outline-2 data-[cmdk-selected=true]:outline-blue-500 dark:data-[cmdk-selected=true]:bg-zinc-700"
             >
               ⚙️ Settings
             </CommandItem>
           </CommandGroup>
+
           <CommandGroup heading="Navigation">
             <CommandItem
               onSelect={() => {
-                alert("Going to Home…")
-                setOpen(false)
+                alert("Going to Home…");
+                setOpen(false);
               }}
               className="cursor-pointer rounded-md px-2 py-1 data-[cmdk-selected=true]:bg-zinc-200 data-[cmdk-selected=true]:outline data-[cmdk-selected=true]:outline-2 data-[cmdk-selected=true]:outline-blue-500 dark:data-[cmdk-selected=true]:bg-zinc-700"
             >
@@ -76,8 +91,8 @@ export function CommandPalette() {
             </CommandItem>
             <CommandItem
               onSelect={() => {
-                alert("Opening Profile…")
-                setOpen(false)
+                alert("Opening Profile…");
+                setOpen(false);
               }}
               className="cursor-pointer rounded-md px-2 py-1 data-[cmdk-selected=true]:bg-zinc-200 data-[cmdk-selected=true]:outline data-[cmdk-selected=true]:outline-2 data-[cmdk-selected=true]:outline-blue-500 dark:data-[cmdk-selected=true]:bg-zinc-700"
             >
@@ -87,5 +102,5 @@ export function CommandPalette() {
         </CommandList>
       </Command>
     </CommandDialog>
-  )
+  );
 }

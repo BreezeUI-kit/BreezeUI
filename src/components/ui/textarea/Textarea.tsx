@@ -1,5 +1,3 @@
-// src/components/ui/textarea/Textarea.tsx
-
 import React, { TextareaHTMLAttributes, useId, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -23,7 +21,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <div className="space-y-1">
         {label && (
-          <label htmlFor={id} className="text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label htmlFor={id} className="text-sm font-medium text-gray-800 dark:text-gray-200">
             {label}
           </label>
         )}
@@ -35,16 +33,22 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           className={cn(
             'w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 transition-all',
             error
-              ? 'border-red-500 focus:ring-red-500'
+              ? 'border-red-600 focus:ring-red-600'
               : success
-              ? 'border-green-500 focus:ring-green-500'
-              : 'border-gray-300 focus:ring-blue-500',
+              ? 'border-green-600 focus:ring-green-600'
+              : 'border-gray-300 focus:ring-blue-600',
             className
           )}
           {...props}
         />
         {helperText && (
-          <p id={helperId} className={cn('text-xs', error ? 'text-red-500' : 'text-gray-500')}>
+          <p
+            id={helperId}
+            className={cn(
+              'text-xs',
+              error ? 'text-red-600 dark:text-red-400' : 'text-gray-700 dark:text-gray-400'
+            )}
+          >
             {helperText}
           </p>
         )}
