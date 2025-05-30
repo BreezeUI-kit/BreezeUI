@@ -2,6 +2,10 @@ import React from "react";
 import { RadioGroupProps } from "./RadioGroup.types";
 import { cn } from "@/lib/utils";
 
+/**
+ * RadioGroup component using Radix.
+ * Useful for grouped radio inputs and controlled selections.
+ */
 export const RadioGroup: React.FC<RadioGroupProps> = ({
   label,
   options,

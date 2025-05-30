@@ -2,6 +2,10 @@ import React from "react";
 import { SliderProps } from "./Slider.types";
 import { cn } from "@/lib/utils";
 
+/**
+ * Slider component using Radix primitives.
+ * Supports horizontal range selection with custom styles.
+ */
 export const Slider: React.FC<SliderProps> = ({
   label,
   value,

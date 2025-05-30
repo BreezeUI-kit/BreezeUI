@@ -10,6 +10,11 @@ interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   success?: boolean;
 }
 
+/**
+ * Textarea component for multiline input.
+ * Styled using Tailwind.
+ * @param props - React textarea element props
+ */
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ label, helperText, error, success, className, ...props }, ref) => {
     const id = useId();

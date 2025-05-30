@@ -8,6 +8,10 @@ interface FormFieldProps {
   error?: string;
 }
 
+/**
+ * FormField wrapper for labels and error/description messaging.
+ * Follows WAI-ARIA practices.
+ */
 export function FormField({ label, htmlFor, children, description, error }: FormFieldProps) {
   const describedBy = description ? `${htmlFor}-desc` : undefined;
   const errorId = error ? `${htmlFor}-error` : undefined;

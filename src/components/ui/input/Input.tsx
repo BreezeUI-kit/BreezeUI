@@ -8,6 +8,11 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   success?: boolean;
 }
 
+/**
+ * Input field component.
+ * Supports typical input props and integrates Tailwind styles.
+ * @param props - React input element props
+ */
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, helperText, error, success, className, ...props }, ref) => {
     const id = useId();

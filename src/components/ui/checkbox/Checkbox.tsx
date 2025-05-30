@@ -9,6 +9,10 @@ interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   indeterminate?: boolean;
 }
 
+/**
+ * Checkbox component built with Radix and styled with Tailwind.
+ * @param props - React component props extending from CheckboxPrimitive.Checkbox
+ */
 export const Checkbox = ({
   label,
   helperText,

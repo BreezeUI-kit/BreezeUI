@@ -2,6 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { SelectProps } from "./Select.types";
 import { cn } from "@/lib/utils";
 
+/**
+ * Select component built on top of Radix Select.
+ * Handles dropdown interactions, keyboard nav, and option selection.
+ */
 export const Select: React.FC<SelectProps> = ({
   label,
   options,

@@ -8,6 +8,11 @@ interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
 }
 
+/**
+ * Toggle button component using Radix Toggle.
+ * Useful for toolbar buttons, modes, and stateful toggles.
+ * @param props - React component props extending TogglePrimitive.Toggle
+ */
 export const Toggle = ({ label, helperText, error, ...props }: ToggleProps) => {
   const id = useId();
   const helperId = `${id}-helper`;
