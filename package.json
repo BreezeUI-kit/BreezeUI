@@ -1,5 +1,5 @@
 {
-  "name": "breezeui",
+  "name": "react-breezeui",
   "version": "1.0.0",
   "description": "BreezeUI — React + Tailwind components for data dashboards",
   "main": "index.js",

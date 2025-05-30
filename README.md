@@ -27,5 +27,5 @@
 ## 📦 Installation
 
 ```bash
-npm install breezeui
+npm install react-breezeui
 ```

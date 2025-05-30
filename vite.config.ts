@@ -11,8 +11,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: "src/index.html",
-      name: "BreezeUI",
-      fileName: (format) => `breezeui.${format}.js`,
+      name: "react-breezeui",
+      fileName: (format) => `react-breezeui.${format}.js`,
     },
     rollupOptions: {
       // externals like react/react-dom
