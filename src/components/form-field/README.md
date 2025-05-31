@@ -5,9 +5,9 @@ This component is part of the BreezeUI component library.
 ## ✨ Usage
 
 ```tsx
-import { FormField } from "@/components/FormField";
+import { FormField } from '@/components/FormField';
 
-<FormField />
+<FormField />;
 ```
 
 ## 📌 Notes
@@ -19,6 +19,7 @@ import { FormField } from "@/components/FormField";
 ## 💡 Design
 
 Include:
+
 - Behavior and states
 - Design rationale (if any)
 - Known limitations (if any)

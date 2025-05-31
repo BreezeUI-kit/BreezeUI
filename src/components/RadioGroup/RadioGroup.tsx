@@ -1,6 +1,6 @@
-import React from "react";
-import { RadioGroupProps } from "./RadioGroup.types";
-import { cn } from "@/lib/utils";
+import React from 'react';
+import { RadioGroupProps } from './RadioGroup.types';
+import { cn } from '@/lib/utils';
 
 /**
  * RadioGroup component using Radix.
@@ -11,16 +11,17 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
   options,
   value,
   onChange,
-  name = "radio-group",
+  name = 'radio-group',
   disabled = false,
-  direction = "vertical",
+  direction = 'vertical',
 }) => {
-  const layoutClass = direction === "horizontal" ? "flex flex-wrap gap-4" : "space-y-2";
+  const layoutClass =
+    direction === 'horizontal' ? 'flex flex-wrap gap-4' : 'space-y-2';
 
   return (
     <fieldset className={layoutClass} disabled={disabled}>
       {label && (
-        <legend className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+        <legend className="mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
           {label}
         </legend>
       )}
@@ -28,8 +29,8 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
         <label
           key={opt.value}
           className={cn(
-            "flex items-center gap-2 cursor-pointer",
-            disabled && "opacity-50 cursor-not-allowed"
+            'flex items-center gap-2 cursor-pointer',
+            disabled && 'opacity-50 cursor-not-allowed'
           )}
         >
           <input

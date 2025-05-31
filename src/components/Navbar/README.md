@@ -5,9 +5,9 @@ This component is part of the BreezeUI component library.
 ## ✨ Usage
 
 ```tsx
-import { Navbar } from "@/components/Navbar";
+import { Navbar } from '@/components/Navbar';
 
-<Navbar />
+<Navbar />;
 ```
 
 ## 📌 Notes
@@ -19,6 +19,7 @@ import { Navbar } from "@/components/Navbar";
 ## 💡 Design
 
 Include:
+
 - Behavior and states
 - Design rationale (if any)
 - Known limitations (if any)

@@ -1,7 +1,8 @@
-import { useState, useRef } from "react";
-import { usePortal } from "../../hooks/usePortal";
-import { createPortal } from "react-dom";
-import { usePosition } from "../../hooks/usePosition";
+import React from 'react';
+import { useState, useRef } from 'react';
+import { usePortal } from '../../hooks/usePortal';
+import { createPortal } from 'react-dom';
+import { usePosition } from '../../hooks/usePosition';
 
 interface DropdownMenuProps {
   trigger: React.ReactNode;
@@ -17,7 +18,7 @@ interface DropdownMenuProps {
 export function DropdownMenu({ trigger, items }: DropdownMenuProps) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const portal = usePortal("breezeui-dropdowns");
+  const portal = usePortal('breezeui-dropdowns');
   const style = usePosition(triggerRef, open);
 
   return (
@@ -28,13 +29,13 @@ export function DropdownMenu({ trigger, items }: DropdownMenuProps) {
       {open &&
         createPortal(
           <div
-            className="w-48 bg-white border rounded shadow z-50"
+            className="z-50 w-48 rounded border bg-white shadow dark:border-gray-700 dark:bg-gray-800 dark:text-white"
             style={style}
           >
             {items.map((item, idx) => (
               <div
                 key={idx}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                className="cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:text-black"
                 onClick={() => {
                   item.onClick();
                   setOpen(false);

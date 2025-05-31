@@ -1,6 +1,6 @@
-import React, { useId } from "react";
-import { SliderProps } from "./Slider.types";
-import { cn } from "@/lib/utils";
+import React, { useId } from 'react';
+import { SliderProps } from './Slider.types';
+import { cn } from '@/lib/utils';
 
 /**
  * Slider component with accessible label support.
@@ -15,19 +15,19 @@ export const Slider: React.FC<SliderProps> = ({
   max = 100,
   step = 1,
   disabled = false,
-  orientation = "horizontal",
+  orientation = 'horizontal',
   id, // allow custom ID
 }) => {
   const internalId = useId();
   const sliderId = id ?? `slider-${internalId}`;
   const labelId = `${sliderId}-label`;
-  const isVertical = orientation === "vertical";
+  const isVertical = orientation === 'vertical';
 
   return (
     <div
       className={cn(
-        "flex gap-2",
-        isVertical ? "flex-col items-center h-48" : "flex-col"
+        'flex gap-2',
+        isVertical ? 'flex-col items-center h-48' : 'flex-col'
       )}
     >
       {label && (
@@ -44,7 +44,7 @@ export const Slider: React.FC<SliderProps> = ({
         type="range"
         id={sliderId}
         aria-labelledby={label ? labelId : undefined}
-        aria-label={label ? undefined : "Slider input"}
+        aria-label={label ? undefined : 'Slider input'}
         value={value}
         min={min}
         max={max}
@@ -52,11 +52,11 @@ export const Slider: React.FC<SliderProps> = ({
         disabled={disabled}
         onChange={(e) => onChange(Number(e.target.value))}
         className={cn(
-          "accent-blue-600 dark:accent-blue-400",
-          "disabled:opacity-50",
-          "focus:outline-none focus:ring-2 focus:ring-blue-500",
-          "bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer",
-          isVertical ? "h-48 w-2" : "w-full h-2"
+          'accent-blue-600 dark:accent-blue-400',
+          'disabled:opacity-50',
+          'focus:outline-none focus:ring-2 focus:ring-blue-500',
+          'bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer',
+          isVertical ? 'h-48 w-2' : 'w-full h-2'
         )}
         role="slider"
         aria-valuemin={min}
@@ -65,8 +65,8 @@ export const Slider: React.FC<SliderProps> = ({
         style={
           isVertical
             ? {
-                writingMode: "vertical-lr",
-                direction: "rtl",
+                writingMode: 'vertical-lr',
+                direction: 'rtl',
               }
             : undefined
         }

@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface DescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
 /**

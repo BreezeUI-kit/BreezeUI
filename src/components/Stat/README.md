@@ -5,9 +5,9 @@ This component is part of the BreezeUI component library.
 ## ✨ Usage
 
 ```tsx
-import { Stat } from "@/components/Stat";
+import { Stat } from '@/components/Stat';
 
-<Stat />
+<Stat />;
 ```
 
 ## 📌 Notes
@@ -19,6 +19,7 @@ import { Stat } from "@/components/Stat";
 ## 💡 Design
 
 Include:
+
 - Behavior and states
 - Design rationale (if any)
 - Known limitations (if any)

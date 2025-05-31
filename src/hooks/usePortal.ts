@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+/* global document */
+
+import { useEffect, useRef } from 'react';
 
 export function usePortal(id: string) {
   const rootElemRef = useRef<HTMLElement | null>(null);
@@ -20,14 +22,14 @@ export function usePortal(id: string) {
   }, [id]);
 
   function createRootElement(id: string) {
-    const root = document.createElement("div");
-    root.setAttribute("id", id);
+    const root = document.createElement('div');
+    root.setAttribute('id', id);
     return root;
   }
 
   function getRootElem() {
     if (!rootElemRef.current) {
-      rootElemRef.current = document.createElement("div");
+      rootElemRef.current = document.createElement('div');
     }
     return rootElemRef.current;
   }

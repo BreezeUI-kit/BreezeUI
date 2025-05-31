@@ -1,8 +1,8 @@
 export interface RadioOption {
-    label: string;
-    value: string;
+  label: string;
+  value: string;
 }
-  
+
 export interface RadioGroupProps {
   label?: string;
   options: { label: string; value: string }[];
@@ -10,7 +10,5 @@ export interface RadioGroupProps {
   onChange: (value: string) => void;
   name?: string;
   disabled?: boolean;
-  direction?: "vertical" | "horizontal";
+  direction?: 'vertical' | 'horizontal';
 }
-  
-  

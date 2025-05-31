@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+/* global window */
+
+import React from 'react';
+import { useEffect, useState } from 'react';
 
 export function usePosition(ref: React.RefObject<HTMLElement>, open: boolean) {
   const [style, setStyle] = useState<React.CSSProperties>({});
@@ -7,7 +10,7 @@ export function usePosition(ref: React.RefObject<HTMLElement>, open: boolean) {
     if (open && ref.current) {
       const rect = ref.current.getBoundingClientRect();
       setStyle({
-        position: "absolute",
+        position: 'absolute',
         top: rect.bottom + window.scrollY,
         left: rect.left + window.scrollX,
       });

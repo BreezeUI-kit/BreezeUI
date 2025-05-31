@@ -5,9 +5,9 @@ This component is part of the BreezeUI component library.
 ## ✨ Usage
 
 ```tsx
-import { RadioGroup } from "@/components/RadioGroup";
+import { RadioGroup } from '@/components/RadioGroup';
 
-<RadioGroup />
+<RadioGroup />;
 ```
 
 ## 📌 Notes
@@ -19,6 +19,7 @@ import { RadioGroup } from "@/components/RadioGroup";
 ## 💡 Design
 
 Include:
+
 - Behavior and states
 - Design rationale (if any)
 - Known limitations (if any)

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface CardProps {
   title: string;
@@ -18,7 +18,7 @@ interface CardProps {
  */
 const Card: React.FC<CardProps> = ({ title, value, icon, description }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md border border-gray-200 dark:border-gray-700 flex flex-col gap-2">
+    <div className="flex flex-col gap-2 rounded-2xl border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-200">
           {title}
@@ -37,6 +37,6 @@ const Card: React.FC<CardProps> = ({ title, value, icon, description }) => {
   );
 };
 
-Card.displayName = "Card";
+Card.displayName = 'Card';
 
 export default Card;

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import Button from "../components/Button";
-import "./header.css";
+import Button from '../components/Button';
+import './header.css';
 
 type User = {
   name: string;
@@ -61,13 +61,9 @@ export const Header = ({
             <Button size="sm" onClick={onLogin}>
               Login
             </Button>
-            <Button
-              variant="primary"
-              size="sm"
-              onClick={onCreateAccount}
-            >
+            <Button variant="primary" size="sm" onClick={onCreateAccount}>
               Sign up
-              </Button>
+            </Button>
           </>
         )}
       </div>

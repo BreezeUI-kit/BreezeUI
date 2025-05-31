@@ -1,7 +1,7 @@
-import { ReactNode, useState, useRef } from "react";
-import { usePortal } from "../../hooks/usePortal";
-import { createPortal } from "react-dom";
-import { usePosition } from "../../hooks/usePosition";
+import { ReactNode, useState, useRef } from 'react';
+import { usePortal } from '../../hooks/usePortal';
+import { createPortal } from 'react-dom';
+import { usePosition } from '../../hooks/usePosition';
 
 interface TooltipProps {
   content: ReactNode;
@@ -17,7 +17,7 @@ interface TooltipProps {
 export function Tooltip({ content, children }: TooltipProps) {
   const [visible, setVisible] = useState(false);
   const targetRef = useRef<HTMLDivElement>(null);
-  const portal = usePortal("breezeui-tooltips");
+  const portal = usePortal('breezeui-tooltips');
   const style = usePosition(targetRef, visible);
 
   return (
@@ -31,7 +31,7 @@ export function Tooltip({ content, children }: TooltipProps) {
       {visible &&
         createPortal(
           <div
-            className="z-50 bg-gray-800 text-white text-sm px-2 py-1 rounded shadow"
+            className="z-50 max-w-xs break-words rounded bg-gray-800 px-2 py-1 text-sm text-white shadow"
             style={style}
           >
             {content}

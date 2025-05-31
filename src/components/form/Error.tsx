@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface ErrorProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
 /**

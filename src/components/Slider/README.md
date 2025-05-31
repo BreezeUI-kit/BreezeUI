@@ -5,9 +5,9 @@ This component is part of the BreezeUI component library.
 ## ✨ Usage
 
 ```tsx
-import { Slider } from "@/components/Slider";
+import { Slider } from '@/components/Slider';
 
-<Slider />
+<Slider />;
 ```
 
 ## 📌 Notes
@@ -19,6 +19,7 @@ import { Slider } from "@/components/Slider";
 ## 💡 Design
 
 Include:
+
 - Behavior and states
 - Design rationale (if any)
 - Known limitations (if any)

@@ -1,7 +1,7 @@
-import { ReactNode, useRef, useState } from "react";
-import { usePortal } from "../../hooks/usePortal";
-import { createPortal } from "react-dom";
-import { usePosition } from "../../hooks/usePosition";
+import { ReactNode, useRef, useState } from 'react';
+import { usePortal } from '../../hooks/usePortal';
+import { createPortal } from 'react-dom';
+import { usePosition } from '../../hooks/usePosition';
 
 interface HoverCardProps {
   trigger: ReactNode;
@@ -17,7 +17,7 @@ interface HoverCardProps {
 export function HoverCard({ trigger, content }: HoverCardProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const portal = usePortal("breezeui-hovercards");
+  const portal = usePortal('breezeui-hovercards');
   const style = usePosition(ref, open);
 
   return (
@@ -31,7 +31,7 @@ export function HoverCard({ trigger, content }: HoverCardProps) {
       {open &&
         createPortal(
           <div
-            className="z-50 w-64 bg-white shadow-lg border rounded p-4"
+            className="z-50 w-fit max-w-sm overflow-hidden rounded border bg-white p-4 shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:text-white"
             style={style}
           >
             {content}

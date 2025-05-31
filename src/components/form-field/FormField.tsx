@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface FormFieldProps {
   label: string;
@@ -18,13 +18,22 @@ interface FormFieldProps {
  * @param description - Optional description text.
  * @param error - Optional error message text.
  */
-export function FormField({ label, htmlFor, children, description, error }: FormFieldProps) {
+export function FormField({
+  label,
+  htmlFor,
+  children,
+  description,
+  error,
+}: FormFieldProps) {
   const describedBy = description ? `${htmlFor}-desc` : undefined;
   const errorId = error ? `${htmlFor}-error` : undefined;
 
   return (
     <div className="space-y-1">
-      <label htmlFor={htmlFor} className="text-sm font-medium text-gray-700 dark:text-gray-300">
+      <label
+        htmlFor={htmlFor}
+        className="text-sm font-medium text-gray-700 dark:text-gray-300"
+      >
         {label}
       </label>
       {children}
@@ -37,10 +46,7 @@ export function FormField({ label, htmlFor, children, description, error }: Form
         </p>
       )}
       {error && (
-        <p
-          id={errorId}
-          className="text-xs text-red-700 dark:text-red-400"
-        >
+        <p id={errorId} className="text-xs text-red-700 dark:text-red-400">
           {error}
         </p>
       )}

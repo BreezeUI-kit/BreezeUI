@@ -1,6 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
-import { SelectProps } from "./Select.types";
-import { cn } from "@/lib/utils";
+/* global document */
+
+import React, { useState, useRef, useEffect } from 'react';
+import { SelectProps } from './Select.types';
+import { cn } from '@/lib/utils';
 
 /**
  * Select component built on top of Radix Select.
@@ -12,13 +14,13 @@ export const Select: React.FC<SelectProps> = ({
   value,
   onChange,
   disabled = false,
-  placeholder = "Select an option",
+  placeholder = 'Select an option',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
-  const listId = "select-options-list";
+  const listId = 'select-options-list';
 
   const selectedOption = options.find((opt) => opt.value === value);
 
@@ -33,7 +35,10 @@ export const Select: React.FC<SelectProps> = ({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (!isOpen && (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ")) {
+    if (
+      !isOpen &&
+      (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ')
+    ) {
       e.preventDefault();
       setIsOpen(true);
       setHighlightedIndex(0);
@@ -43,21 +48,23 @@ export const Select: React.FC<SelectProps> = ({
     if (!isOpen) return;
 
     switch (e.key) {
-      case "ArrowDown":
+      case 'ArrowDown':
         e.preventDefault();
         setHighlightedIndex((prev) => (prev + 1) % options.length);
         break;
-      case "ArrowUp":
+      case 'ArrowUp':
         e.preventDefault();
-        setHighlightedIndex((prev) => (prev - 1 + options.length) % options.length);
+        setHighlightedIndex(
+          (prev) => (prev - 1 + options.length) % options.length
+        );
         break;
-      case "Enter":
+      case 'Enter':
         e.preventDefault();
         if (highlightedIndex >= 0) {
           handleSelect(options[highlightedIndex].value);
         }
         break;
-      case "Escape":
+      case 'Escape':
         e.preventDefault();
         setIsOpen(false);
         buttonRef.current?.focus();
@@ -77,15 +84,16 @@ export const Select: React.FC<SelectProps> = ({
           setIsOpen(false);
         }
       };
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
+      return () =>
+        document.removeEventListener('mousedown', handleClickOutside);
     }
   }, [isOpen]);
 
   return (
-    <div className="relative inline-block text-left w-64">
+    <div className="relative inline-block w-64 text-left">
       {label && (
-        <label className="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
           {label}
         </label>
       )}
@@ -93,8 +101,10 @@ export const Select: React.FC<SelectProps> = ({
         ref={buttonRef}
         type="button"
         className={cn(
-          "w-full px-4 py-2 border rounded-md text-left focus:outline-none focus:ring-2 focus:ring-blue-500",
-          disabled ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "bg-white dark:bg-gray-900"
+          'w-full px-4 py-2 border rounded-md text-left focus:outline-none focus:ring-2 focus:ring-blue-500',
+          disabled
+            ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+            : 'bg-white dark:bg-gray-900'
         )}
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
@@ -111,7 +121,7 @@ export const Select: React.FC<SelectProps> = ({
           ref={listRef}
           id={listId}
           role="listbox"
-          className="absolute z-10 mt-1 w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg max-h-60 overflow-y-auto focus:outline-none"
+          className="absolute z-10 mt-1 max-h-60 w-full overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg focus:outline-none dark:border-gray-700 dark:bg-gray-800"
         >
           {options.map((opt, index) => {
             const isSelected = value === opt.value;
@@ -124,9 +134,10 @@ export const Select: React.FC<SelectProps> = ({
                 role="option"
                 aria-selected={isSelected}
                 className={cn(
-                  "px-4 py-2 cursor-pointer",
-                  isSelected && "bg-blue-100 dark:bg-blue-700 text-blue-900 dark:text-white",
-                  isHighlighted && !isSelected && "bg-gray-100 dark:bg-gray-700"
+                  'px-4 py-2 cursor-pointer',
+                  isSelected &&
+                    'bg-blue-100 dark:bg-blue-700 text-blue-900 dark:text-white',
+                  isHighlighted && !isSelected && 'bg-gray-100 dark:bg-gray-700'
                 )}
                 onClick={() => handleSelect(opt.value)}
                 onMouseEnter={() => setHighlightedIndex(index)}

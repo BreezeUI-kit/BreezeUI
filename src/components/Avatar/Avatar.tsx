@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
 interface AvatarProps {
   src: string;
   alt?: string;
-  size?: "sm" | "md" | "lg";
+  size?: 'sm' | 'md' | 'lg';
 }
 
 const sizeMap = {
-  sm: "h-8 w-8",
-  md: "h-12 w-12",
-  lg: "h-16 w-16",
+  sm: 'h-8 w-8',
+  md: 'h-12 w-12',
+  lg: 'h-16 w-16',
 };
 
 /**
@@ -21,8 +21,8 @@ const sizeMap = {
  */
 const Avatar: React.FC<AvatarProps> = ({
   src,
-  alt = "Avatar",
-  size = "md",
+  alt = 'Avatar',
+  size = 'md',
 }: AvatarProps) => {
   return (
     <img
@@ -33,6 +33,6 @@ const Avatar: React.FC<AvatarProps> = ({
   );
 };
 
-Avatar.displayName = "Avatar";
+Avatar.displayName = 'Avatar';
 
 export default Avatar;

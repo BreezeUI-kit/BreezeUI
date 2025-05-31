@@ -5,9 +5,9 @@ This component is part of the BreezeUI component library.
 ## ✨ Usage
 
 ```tsx
-import { Card } from "@/components/Card";
+import { Card } from '@/components/Card';
 
-<Card />
+<Card />;
 ```
 
 ## 📌 Notes
@@ -19,6 +19,7 @@ import { Card } from "@/components/Card";
 ## 💡 Design
 
 Include:
+
 - Behavior and states
 - Design rationale (if any)
 - Known limitations (if any)

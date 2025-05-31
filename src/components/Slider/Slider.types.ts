@@ -24,5 +24,5 @@ export interface SliderProps {
   disabled?: boolean;
 
   /** Orientation of the slider */
-  orientation?: "horizontal" | "vertical";
+  orientation?: 'horizontal' | 'vertical';
 }

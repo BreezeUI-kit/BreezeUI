@@ -5,9 +5,9 @@ This component is part of the BreezeUI component library.
 ## ✨ Usage
 
 ```tsx
-import { Select } from "@/components/Select";
+import { Select } from '@/components/Select';
 
-<Select />
+<Select />;
 ```
 
 ## 📌 Notes
@@ -19,6 +19,7 @@ import { Select } from "@/components/Select";
 ## 💡 Design
 
 Include:
+
 - Behavior and states
 - Design rationale (if any)
 - Known limitations (if any)

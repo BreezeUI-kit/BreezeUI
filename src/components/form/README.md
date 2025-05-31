@@ -5,9 +5,9 @@ This component is part of the BreezeUI component library.
 ## ✨ Usage
 
 ```tsx
-import { Form } from "@/components/Form";
+import { Form } from '@/components/Form';
 
-<Form />
+<Form />;
 ```
 
 ## 📌 Notes
@@ -19,6 +19,7 @@ import { Form } from "@/components/Form";
 ## 💡 Design
 
 Include:
+
 - Behavior and states
 - Design rationale (if any)
 - Known limitations (if any)

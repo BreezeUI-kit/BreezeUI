@@ -5,9 +5,9 @@ This component is part of the BreezeUI component library.
 ## ✨ Usage
 
 ```tsx
-import { Avatar } from "@/components/Avatar";
+import { Avatar } from '@/components/Avatar';
 
-<Avatar />
+<Avatar />;
 ```
 
 ## 📌 Notes
@@ -19,6 +19,7 @@ import { Avatar } from "@/components/Avatar";
 ## 💡 Design
 
 Include:
+
 - Behavior and states
 - Design rationale (if any)
 - Known limitations (if any)

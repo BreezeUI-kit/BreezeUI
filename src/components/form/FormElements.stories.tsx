@@ -1,11 +1,18 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import { Label } from "./Label";
-import { Description } from "./Description";
-import { Error } from "./Error";
+import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+import { Label } from './Label';
+import { Description } from './Description';
+import { Error } from './Error';
 
 const meta: Meta = {
-  title: "Components/Form Elements",
+  title: 'Components/Form Elements',
+  parameters: {
+    docs: {
+      description: {
+        component: 'A container for form elements with structured layout and submission logic.',
+      },
+    },
+  },  
 };
 
 export default meta;
@@ -23,7 +30,5 @@ export const DescriptionExample: StoryObj = {
 };
 
 export const ErrorExample: StoryObj = {
-  render: () => (
-    <Error id="error">This field is required.</Error>
-  ),
+  render: () => <Error id="error">This field is required.</Error>,
 };
