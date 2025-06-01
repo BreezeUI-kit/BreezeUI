@@ -1,4 +1,4 @@
-# BreezeUI
+# react-breezeui
 
 BreezeUI is a sleek, accessible, and customizable React + Tailwind CSS component library designed for data dashboards and modern web applications. Built with performance and developer experience in mind, it includes a growing collection of UI primitives and advanced components.
 
@@ -46,19 +46,6 @@ See the [Storybook](https://your-storybook-link.com) for full examples and docum
 - Navigation: Breadcrumbs, Pagination, Tabs
 
 …and more being added weekly.
-
-## 🗂 Folder Structure
-
-```
-/components/ui
-  ├── Button/
-  ├── Input/
-  ├── Dialog/
-  └── ...
-
-/lib
-  └── utils.ts
-```
 
 ## 🚨 Accessibility
 

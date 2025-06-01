@@ -3,6 +3,7 @@ import Button from './components/Button';
 import Badge from './components/Badge';
 import { Tabs } from './components/ui/tabs';
 import { FaGithub } from 'react-icons/fa';
+import BreezeLogo from './assets/logo/logo.png';
 
 const tabs = [
   { id: 'components', label: 'Components' },
@@ -32,8 +33,10 @@ export default function App() {
 
       {/* Hero Section */}
       <section className="mx-auto max-w-4xl text-center">
-        <h1 className="text-4xl font-bold sm:text-5xl">BreezeUI</h1>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+        <div className="flex flex-col items-center gap-4">
+          <img src={BreezeLogo} alt="BreezeUI logo" className="h-24 w-auto" />
+        </div>
+        <p className="text-lg text-gray-600 dark:text-gray-400">
           A sleek, modern component library for building beautiful data dashboards with React & Tailwind CSS.
         </p>
         <div className="mt-6 flex justify-center gap-4">
